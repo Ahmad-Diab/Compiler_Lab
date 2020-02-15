@@ -5,7 +5,7 @@ public class DFA
     boolean [] acceptedState ;
     int [][] next ;
 
-    DFA(String s)
+    public DFA(String s)
     {
         StringTokenizer st = new StringTokenizer(s , "#") ;
         String states_transitions = st.nextToken() ;
@@ -36,7 +36,7 @@ public class DFA
             acceptedState[x] = true ;
         }
     }
-    boolean run(String s)
+    public boolean run(String s)
     {
         int state = 0 ;
         for(char c : s.toCharArray())

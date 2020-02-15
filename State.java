@@ -3,9 +3,9 @@ import java.util.Collection;
 
 public class State implements Comparable<State>
 {
-    ArrayList<Integer> list;
-    int id ;
-    State(Collection<Integer> a , int b)
+    public ArrayList<Integer> list;
+    public int id ;
+    public State(Collection<Integer> a , int b)
     {
         list = new ArrayList<>(a) ;
         id = b ;

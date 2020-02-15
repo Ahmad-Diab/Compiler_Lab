@@ -1,8 +1,8 @@
 public class Tuple
 {
-    int i , j , k ;
+    public int i , j , k ;
 
-    Tuple(int a , int b , int c)
+    public Tuple(int a , int b , int c)
     {
         i = a ; j  = b ; k = c ;
     }

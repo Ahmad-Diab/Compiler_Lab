@@ -10,9 +10,8 @@ public class Main
         NFA nfa = new NFA(br.readLine()) ;
         String s = nfa.convert_NFA_to_DFA() ;
         out.println(s);
-        DFA dfs = new DFA(s) ;
-//        out.println(dfs.run(br.readLine()));
-
+        DFA dfa = new DFA(s) ;
+        out.println(dfa.run(br.readLine()));
         out.flush();
     }
 }

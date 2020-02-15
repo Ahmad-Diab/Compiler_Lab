@@ -11,9 +11,7 @@ public class DFA
         String states_transitions = st.nextToken() ;
         String accepted_states = st.nextToken() ;
         st = new StringTokenizer(states_transitions , ";") ;
-
         ArrayList<Tuple> tuples = new ArrayList<>() ;
-
         while (st.hasMoreTokens())
         {
             String state = st.nextToken() ;
@@ -44,21 +42,5 @@ public class DFA
         for(char c : s.toCharArray())
             state = next[state][c - '0'];
         return acceptedState[state] ;
-    }
-    public static void main(String [] args)
-    {
-        Scanner sc = new Scanner(System.in) ;
-        DFA dfa = new DFA(sc.next()) ;
-        System.out.println(dfa.run(sc.next()));
-    }
-
-    class Tuple
-    {
-        int i , j , k ;
-
-        Tuple(int a , int b , int c)
-        {
-            i = a ; j  = b ; k = c ;
-        }
     }
 }

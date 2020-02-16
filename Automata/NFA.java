@@ -40,8 +40,7 @@ public class NFA
                 if (s.charAt(i) == '#' || i == s.length() - 1)
                 {
                     idx = i;
-                    if(i == s.length() - 1)
-                        idx ++ ;
+                    if(i == s.length() - 1) idx ++ ;
                     break;
                 }
             if(start <= idx) tokenizers[j] = new StringTokenizer(s.substring(start, idx), ";");
@@ -90,30 +89,23 @@ public class NFA
         int newSize = 0 ;
         for(Tuple tuple : tuples)
         {
-            if(dfa_input.length() > 0)
-                dfa_input.append(";") ;
+            if(dfa_input.length() > 0) dfa_input.append(";") ;
             newSize = Math.max(newSize , Math.max(Math.max(tuple.i + 1 , tuple.j + 1) , tuple.k + 1)) ;
             dfa_input.append(tuple.i).append(",").append(tuple.j).append(",").append(tuple.k);
         }
         boolean [] newAcceptedStates = new boolean[newSize] ;
         for(State state : visited.keySet())
-        {
-//            System.out.println(state);
             for (int v : state.list)
                 newAcceptedStates[state.id] |= accepted[v];
-        }
         dfa_input.append("#") ;
 
         for(int i = 0 , cnt = 0 ; i < newSize ; i++)
-        {
             if(newAcceptedStates[i])
             {
-                if(cnt > 0)
-                    dfa_input.append(",");
+                if(cnt > 0) dfa_input.append(",");
                 dfa_input.append(i) ;
                 cnt++;
             }
-        }
         return dfa_input.toString() ;
     }
     TreeSet<Integer> traverse_epsilon(int u , boolean [] vis)

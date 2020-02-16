@@ -1,17 +1,16 @@
 import java.io.*;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Main
 {
     public static void main(String[] args) throws Exception
     {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        PrintWriter out = new PrintWriter(System.out) ;
-        NFA nfa = new NFA(br.readLine()) ;
+        Scanner sc = new Scanner(System.in) ;
+        NFA nfa = new NFA(sc.next()) ;
         String s = nfa.convert_NFA_to_DFA() ;
-        out.println(s);
+        System.out.println(s);
         DFA dfa = new DFA(s) ;
-        out.println(dfa.run(br.readLine()));
-        out.flush();
+        System.out.println(dfa.run(sc.next()));
     }
 }

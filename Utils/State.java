@@ -20,12 +20,6 @@ public class State implements Comparable<State>
                 return list.get(i) - o.list.get(i) ;
         return 0;
     }
-
     @Override
-    public String toString() {
-        return "State{" +
-                "list=" + list +
-                ", id=" + id +
-                '}';
-    }
+    public String toString() { return "State{" + "list=" + list + ", id=" + id +'}'; }
 }
